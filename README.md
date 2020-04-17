@@ -7,7 +7,7 @@ I then executed `check.py` using `memory-profiler` from pip as `mprof run python
 
 
 Here is a vector of 100,000,000 bools created using rust via pyo3, and created in pure python.
-The first plateau is rust without any vector of bools for 3 seconds, then rust makes the vector and waits 3 seconds. Then the vector is exported to python which also waits for 3 seconds. After this the list is deleted and then python makes its own list and waits 3 seconds. While the stead state of each list has the same size, the peak for the pyo3 version is much larger.
+The first plateau is rust without any vector of bools for 3 seconds, then rust makes the vector and waits 3 seconds. Then the vector is exported to python which also waits for 3 seconds. After this the list is deleted python then makes its own list and waits 3 seconds. While the steady state of each list has the same size, the peak for the pyo3 version is much larger.
 ![Vector Of Bool](RawBoolsOnly.png)
 
 For objects more complicated: Consider a list of tuples of (list of list, float).
