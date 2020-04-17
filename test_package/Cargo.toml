@@ -1,0 +1,19 @@
+[package]
+name = "pyo3_check"
+version = "0.1.0"
+authors = ["sumnernh@gmail.com <sumnernh@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "pyo3_check"
+crate-type = ["cdylib"]
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+
+[dependencies.pyo3]
+version = "^0.9"
+features = ["extension-module"]
